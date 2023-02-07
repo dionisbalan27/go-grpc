@@ -1,0 +1,17 @@
+syntax="proto3";
+
+option go_package ="latihan2.grpc/peserta";
+
+message PesertaRequest {
+string nis = 1;
+}
+
+message PesertaData {
+string nis = 1;
+string name = 2;
+string address = 3;
+}
+
+service Peserta {
+	rpc FindPesertaByNis(PesertaRequest) returns (PesertaData) {}
+}
